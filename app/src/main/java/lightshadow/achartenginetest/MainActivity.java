@@ -47,9 +47,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 SeriesSelection seriesSelection = chart.getCurrentSeriesAndPoint();
-                if (seriesSelection == null) {
-//                    Toast.makeText(MainActivity.this, "No chart element", Toast.LENGTH_SHORT).show();
-                } else {
+                if (seriesSelection != null) {
                     // display information of the clicked point
                     Toast.makeText(
                             MainActivity.this,
@@ -75,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
         renderer.setYTitle(yTitle); // Y軸名稱
         renderer.setPointSize(20); //點大小
         renderer.setMargins(new int[] { 50, 50, 50, 50 }); //Top, Left, Right, Bottom
+        renderer.setYLabelsPadding(20);
         renderer.setLegendTextSize(30); //說明字型大小
         renderer.setLabelsTextSize(30); //座標字型大小
         renderer.setAxisTitleTextSize(30); //XY軸字型大小
