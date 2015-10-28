@@ -26,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         String[] titles = new String[]{"折線1"}; // 定義折線的名稱 , "折線2"
-        List<double[]> x = new ArrayList<double[]>(); // 點的x坐標
-        List<double[]> y = new ArrayList<double[]>(); // 點的y坐標
+        List<double[]> x = new ArrayList<>(); // 點的x坐標
+        List<double[]> y = new ArrayList<>(); // 點的y坐標
         // 數值X,Y坐標值輸入
         x.add(new double[]{1, 3, 5, 7, 9, 11});
 //        x.add(new double[] { 0, 2, 4, 6, 8, 10 });
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         renderer.setXTitle(xTitle); // X軸名稱
         renderer.setYTitle(yTitle); // Y軸名稱
         renderer.setPointSize(20); //點大小
-        renderer.setMargins(new int[] { 50, 50, 50, 50 }); //Top, Left, Right, Bottom
+        renderer.setMargins(new int[]{50, 50, 50, 50}); //Top, Left, Right, Bottom
         renderer.setYLabelsPadding(20);
         renderer.setLegendTextSize(30); //說明字型大小
         renderer.setLabelsTextSize(30); //座標字型大小
@@ -87,6 +87,9 @@ public class MainActivity extends AppCompatActivity {
         renderer.setLabelsColor(Color.BLACK); // 設定標籤顏色
         renderer.setMarginsColor(Color.WHITE); // 設定背景顏色
         renderer.setShowGrid(true); // 設定格線
+        renderer.setPanLimits(new double[]{xMin, xMax, yMin, yMax});
+        renderer.setZoomLimits(new double[]{xMin, xMax, yMin, yMax});
+
     }
 
     // 定義折線圖的格式
